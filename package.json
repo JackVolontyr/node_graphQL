@@ -1,0 +1,25 @@
+{
+	"name": "node_graphql_practice",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js",
+		"start-dev": "nodemon index.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"nodemon": "^2.0.18"
+	},
+	"dependencies": {
+		"dotenv": "^16.0.1",
+		"express": "^4.18.1",
+		"express-graphql": "^0.12.0",
+		"graphql": "^16.5.0",
+		"mysql2": "^2.3.3",
+		"path": "^0.12.7",
+		"sequelize": "^6.21.0"
+	}
+}
