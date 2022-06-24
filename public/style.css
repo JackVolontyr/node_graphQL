@@ -1,0 +1,62 @@
+.done {
+	text-decoration: line-through;
+}
+
+[v-cloak] {
+	display: none;
+}
+
+.v-application--wrap {
+	display: block;
+}
+
+.p-l-r-0 {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.p-l-r-1 {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.p-l-r-2 {
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
+.m-t-b-2 {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.v-list-item__content {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.width-33 {
+	width: 33%;
+	flex-basis: 33%;
+}
+
+.width-50 {
+	width: 50%;
+	flex-basis: 50%;
+}
+
+.v-list-item {
+	min-height: auto !important;
+}
+
+@media (min-width: 1264px) {
+	.container {
+		max-width: 100%;
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+}
+
+.v-application--is-ltr .v-list-item__action:first-child {
+	margin-right: 10px;
+}

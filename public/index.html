@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+		<link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+		<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+		<link href="/style.css" rel="stylesheet">
+		<link rel="shortcut icon" href="/favicon.ico">
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+		<title>Tasks</title>
+	</head>
+
+	<body>
+		<div id="app" v-cloak>
+			<v-app>
+				<!--<v-app-bar color="deep-purple accent-1" dence>
+					<v-toolbar-title>Tasks list</v-toolbar-title>
+				</v-app-bar>-->
+
+				<v-container class="m-t-b-2">
+					<v-layout row justify-center>
+						<v-flex xs12>
+							<v-card>
+								<v-list two-line subheader>
+									<v-container>
+										<!--<v-subheader class="headline">
+											{{new Date() | date}}
+										</v-subheader>-->
+										
+										<v-spacer></v-spacer>
+
+										<p class="text-xs-right p-l-r-1">
+											<b>{{todos.filter(t => t.done).length}}</b> /
+											<b>{{todos.length}}</b> Tasks
+										</p>
+
+										<div class="text-xs-right p-l-r-1">orange: orange, red: #D61D23, violet: #933BEB, blue: blue, green: #159f1a</div>
+
+										<v-flex xs12>
+											<v-text-field class="p-l-r-1" clearable v-model="todoTitle" id="newTodo" name="newTodo"
+												label="Enter task name || Enter label text || Enter label color, for example: #b388ff" 
+												@keyup.enter="addTodo">
+											</v-text-field>
+										</v-flex>
+									</v-container>
+
+									<v-subheader class="subheading p-l-r-2" v-if="todos.length === 0">
+										There is no a task, to add new
+									</v-subheader>
+									
+									<!--<v-subheader class="subheading p-l-r-2" v-else>
+										Your tasks:
+									</v-subheader>-->
+
+									<v-container class="d-flex flex-wrap">
+										<div class="p-l-r-0 width-33" v-for="(todo, i) in todos" :key="i">
+											<v-list-item>
+												<v-list-item-action>
+													<v-checkbox 
+														v-if="!todo.done"
+														@change="completeTodo(todo.id)" 
+														v-model="todo.done"></v-checkbox>
+												</v-list-item-action>
+												<v-list-item-content>
+													<v-list-item-title :class="{done: todo.done}">
+														{{todo.title | capitalize}}
+														<v-chip class="ma-2" label :color="todo.labelColor" text-color="white" v-if="todo.labelText">
+															{{todo.labelText}}
+														</v-chip>
+													</v-list-item-title>
+
+													<!--<v-list-item-subtitle>
+														Added at: {{todo.createdAt | date(true)}}
+														<v-spacer></v-spacer>
+														Updated at: {{todo.updatedAt | date(true)}}
+													</v-list-item-subtitle>-->
+												</v-list-item-content>
+												<v-btn icon ripple color="red" @click="removeTodo(todo.id)">
+													<v-icon class="white--text">mdi-close</v-icon>
+												</v-btn>
+											</v-list-item>
+										</div>
+									</v-container>
+
+								</v-list>
+							</v-card>
+						</v-flex>
+					</v-layout>
+				</v-container>
+			</v-app>
+		</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script><script src="/app.js"></script>
+	</body>
+</html>
