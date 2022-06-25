@@ -29,7 +29,7 @@ async function start() {
 
 		sequelize.sync();
 
-		const PORT = process.env.PORT || 8001;
+		const PORT = process.env.PORT || 8002;
 		app.listen(PORT, _ => console.log(`Starts on ${PORT} PORT.`))
 
 	} catch (error) { console.log(error); }
